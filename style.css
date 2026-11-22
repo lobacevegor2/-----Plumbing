@@ -278,3 +278,141 @@ max-width: 600px {
     align-items: flex-start;
   }
 }
+/* Форма заявки */
+
+.contact-description {
+  color: var(--muted);
+  margin: 20px 0 30px;
+  font-size: 16px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 520px;
+  margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 17px 20px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--blue);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--muted);
+}
+
+.contact-form button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.phone-link {
+  display: inline-block;
+  margin-top: 25px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.phone-link:hover {
+  color: var(--white);
+}
+.telegram-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  margin-top: 16px;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.telegram-button:hover {
+  background: var(--blue);
+  transform: translateY(-2px);
+}
+/* Галерея работ */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.portfolio-item {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.portfolio-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  overflow: hidden;
+}
+
+.portfolio-images img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.portfolio-item h3 {
+  padding: 18px 18px 6px;
+  font-size: 17px;
+}
+
+.portfolio-item p {
+  padding: 0 18px 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+max-width: 800px {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+max-width: 520px {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-images img {
+    height: 220px;
+  }
+}
