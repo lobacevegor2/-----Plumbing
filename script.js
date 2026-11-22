@@ -20,3 +20,23 @@ if (contactForm) {
     window.open(whatsappUrl, "_blank");
   });
 }
+document.querySelectorAll("[data-slider]").forEach((slider) => {
+  const images = slider.querySelectorAll(".slider-image");
+  const prev = slider.querySelector(".prev");
+  const next = slider.querySelector(".next");
+  const counter = slider.querySelector(".slider-counter");
+
+  let current = 0;
+
+  function showImage(index) {
+    images[current].classList.remove("active");
+
+    current = (index + images.length) % images.length;
+
+    images[current].classList.add("active");
+    counter.textContent = `${current + 1} / ${images.length}`;
+  }
+
+  prev.addEventListener("click", () => showImage(current - 1));
+  next.addEventListener("click", () => showImage(current + 1));
+});
