@@ -483,3 +483,6 @@ background: #171b22;
   object-position: center;
   transform: none !important;
 }
+.portfolio-slider img.slider-image {
+  transform: scale(0.85) !important;
+}
