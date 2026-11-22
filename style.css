@@ -29,6 +29,8 @@ a {
   text-decoration: none;
 }
 
+/* Шапка */
+
 .header {
   min-height: 90px;
   padding: 0 8%;
@@ -53,15 +55,19 @@ nav {
   gap: 32px;
 }
 
-nav a, .header-phone {
+nav a,
+.header-phone {
   font-size: 13px;
   color: var(--muted);
   transition: .3s;
 }
 
-nav a:hover, .header-phone:hover {
+nav a:hover,
+.header-phone:hover {
   color: white;
 }
+
+/* Первый экран */
 
 .hero {
   min-height: 650px;
@@ -113,6 +119,7 @@ h1 span {
   border-radius: 4px;
   font-weight: 700;
   transition: .3s;
+  color: white;
 }
 
 .main-button:hover {
@@ -140,6 +147,8 @@ h1 span {
   color: var(--muted);
   font-size: 12px;
 }
+
+/* Услуги */
 
 .services {
   padding: 110px 8%;
@@ -188,6 +197,113 @@ h2 {
   line-height: 1.7;
 }
 
+/* Галерея работ */
+
+.portfolio {
+  padding: 110px 8%;
+}
+
+.portfolio-description {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: -30px;
+  margin-bottom: 35px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.portfolio-item {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.portfolio-slider {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: #111820;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-image {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 5px;
+}
+
+.slider-image.active {
+  display: block;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ffffff30;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s;
+}
+
+.slider-arrow:hover {
+  background: var(--blue);
+}
+
+.slider-arrow.prev {
+  left: 10px;
+}
+
+.slider-arrow.next {
+  right: 10px;
+}
+
+.slider-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 12px;
+}
+
+.portfolio-item h3 {
+  padding: 18px 18px 6px;
+  font-size: 17px;
+}
+
+.portfolio-item p {
+  padding: 0 18px 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Обо мне */
+
 .about {
   padding: 120px 8%;
   max-width: 1000px;
@@ -199,6 +315,8 @@ h2 {
   max-width: 650px;
 }
 
+/* Контакты */
+
 .contacts {
   padding: 100px 8%;
   background: #192432;
@@ -207,6 +325,86 @@ h2 {
 .contacts h2 {
   margin-bottom: 35px;
 }
+
+.contact-description {
+  color: var(--muted);
+  margin: 20px 0 30px;
+  font-size: 16px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 520px;
+  margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 17px 20px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color .3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--blue);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--muted);
+}
+
+.contact-form button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.telegram-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  margin-top: 16px;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  color: var(--white);
+  font-weight: 600;
+  transition: .3s;
+}
+
+.telegram-button:hover {
+  background: var(--blue);
+  transform: translateY(-2px);
+}
+
+.phone-link {
+  display: inline-block;
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.phone-link:hover {
+  color: var(--white);
+}
+
+/* Подвал */
 
 footer {
   padding: 40px 8%;
@@ -218,15 +416,23 @@ footer {
   font-size: 13px;
 }
 
+/* Планшеты */
+
 @media (max-width: 900px) {
   .service-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   nav {
     gap: 15px;
   }
 }
+
+/* Телефоны */
 
 @media (max-width: 600px) {
   .header {
@@ -264,7 +470,10 @@ footer {
     letter-spacing: -2px;
   }
 
-  .services, .about, .contacts {
+  .services,
+  .about,
+  .contacts,
+  .portfolio {
     padding: 75px 6%;
   }
 
@@ -272,217 +481,22 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .portfolio-slider {
+    height: 240px;
+  }
+
+  .portfolio-item h3 {
+    font-size: 16px;
+  }
+
   footer {
     padding: 35px 6%;
     flex-direction: column;
     align-items: flex-start;
   }
-}
-/* Форма заявки */
-
-.contact-description {
-  color: var(--muted);
-  margin: 20px 0 30px;
-  font-size: 16px;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 520px;
-  margin-top: 30px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 17px 20px;
-  background: var(--card);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  color: var(--white);
-  font-family: inherit;
-  font-size: 15px;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--blue);
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: var(--muted);
-}
-
-.contact-form button {
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-}
-
-.phone-link {
-  display: inline-block;
-  margin-top: 25px;
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.phone-link:hover {
-  color: var(--white);
-}
-.telegram-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 24px;
-  margin-top: 16px;
-  border: 1px solid var(--blue);
-  border-radius: 10px;
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.telegram-button:hover {
-  background: var(--blue);
-  transform: translateY(-2px);
-}
-/* Галерея работ */
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.portfolio-item {
-  min-width: 0;
-  background: var(--card);
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.portfolio-images {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 4px;
-  overflow: hidden;
-}
-
-.portfolio-images img {
-  display: block;
-  width: 100%;
-  height: 190px;
-object-fit: cover;
-background: #171b22;
-  cursor: pointer;
-}
-
-.portfolio-item h3 {
-  padding: 18px 18px 6px;
-  font-size: 17px;
-}
-
-.portfolio-item p {
-  padding: 0 18px 18px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-@media max-width: 800px {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media max-width: 520px {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-images {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-images img {
-    height: 180px;
-  }
-}
-.portfolio-slider {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  background: #171b22;
-}
-
-.slider-image {
-  display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  padding: 5px;
-}
-
-.slider-image.active {
-  display: block;
-}
-
-.slider-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 38px;
-  height: 38px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.65);
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.slider-arrow.prev {
-  left: 10px;
-}
-
-.slider-arrow.next {
-  right: 10px;
-}
-
-.slider-counter {
-  position: absolute;
-  bottom: 10px;
-  right: 12px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.65);
-  color: white;
-  font-size: 12px;
-}
-.portfolio-slider img.slider-image {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain !important;
-  object-position: center;
-  transform: none !important;
-}
-.portfolio-slider img.slider-image {
-  transform: scale(0.85) !important;
 }
