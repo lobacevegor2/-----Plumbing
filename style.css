@@ -218,7 +218,7 @@ footer {
   font-size: 13px;
 }
 
-max-width: 900px {
+@media (max-width: 900px) {
   .service-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -228,7 +228,7 @@ max-width: 900px {
   }
 }
 
-max-width: 600px {
+@media (max-width: 600px) {
   .header {
     padding: 22px 6%;
     flex-wrap: wrap;
