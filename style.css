@@ -435,6 +435,7 @@ background: #171b22;
   height: 100%;
   object-fit: contain;
   object-position: center;
+  padding: 5px;
 }
 
 .slider-image.active {
