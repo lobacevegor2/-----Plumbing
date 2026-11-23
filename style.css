@@ -1202,3 +1202,91 @@ footer {
     transform: translateX(-50%) scale(0.5);
   }
 }
+/* ПОДВАЛ САЙТА */
+
+.footer {
+  padding: 65px 8% 25px;
+  background: #080e15;
+  border-top: 1px solid var(--border);
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 50px;
+}
+
+.footer-brand p {
+  max-width: 300px;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer h3 {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 22px;
+}
+
+.footer-nav,
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.footer-nav a,
+.footer-contacts a,
+.footer-contacts span {
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition: .3s ease;
+}
+
+.footer-nav a:hover,
+.footer-contacts a:hover {
+  color: var(--blue);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 50px 6% 22px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-bottom: 35px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+/* ССЫЛКА НА АВИТО В ПОДВАЛЕ */
+
+.footer-contacts a[href*="avito.ru"] {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.footer-contacts a[href*="avito.ru"]:hover {
+  color: #ffffff;
+}
