@@ -846,3 +846,359 @@ footer {
     min-height: 180px;
     padding: 22px;
   }
+/* ОТЗЫВЫ КЛИЕНТОВ */
+
+.reviews {
+  padding: 110px 8%;
+  background: #0d141d;
+}
+
+.reviews h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  color: #fff;
+  margin: 15px 0;
+}
+
+.reviews h2 span {
+  color: var(--blue);
+}
+
+.reviews-description {
+  color: var(--muted);
+  margin-bottom: 45px;
+  font-size: 15px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.review-card {
+  padding: 28px;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 42, 56, 0.9),
+    rgba(18, 25, 34, 0.95)
+  );
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: .3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.review-top h3 {
+  color: #fff;
+  font-size: 17px;
+}
+
+.review-top span {
+  color: var(--blue);
+  font-size: 12px;
+}
+
+.review-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.review-card small {
+  display: block;
+  margin-top: 22px;
+  color: var(--blue);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews {
+    padding: 75px 6%;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .advantage-card h3 {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+  }
+}
+/* ПЛАВНОЕ ПОЯВЛЕНИЕ БЛОКОВ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* КРАСИВАЯ КАПЛЯ ВОДЫ */
+
+.water-drop {
+  position: absolute;
+  right: 22%;
+  top: 50%;
+  width: 100px;
+  height: 150px;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.drop {
+  position: absolute;
+  top: 10px;
+  left: 33px;
+  width: 42px;
+  height: 55px;
+  background: linear-gradient(
+    145deg,
+    #e3f8ff 0%,
+    #65c9ff 30%,
+    #168bd0 75%,
+    #a9e7ff 100%
+  );
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  transform: rotate(45deg);
+  box-shadow:
+    0 0 18px rgba(65, 180, 255, 0.6),
+    inset -5px -5px 10px rgba(0, 65, 130, 0.35),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.8);
+  animation: drop-fall 2.4s ease-in infinite;
+}
+
+.drop::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 20px;
+  left: 9px;
+  top: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  filter: blur(1px);
+}
+
+.ripple {
+  position: absolute;
+  left: 10px;
+  bottom: 12px;
+  width: 80px;
+  height: 20px;
+  border: 2px solid rgba(70, 180, 255, 0.7);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ripple-effect 2.4s ease-out infinite;
+}
+
+.ripple-two {
+  animation-delay: 0.2s;
+}
+
+@keyframes drop-fall {
+  0% {
+    top: 5px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0.8);
+  }
+  20% { opacity: 1; }
+  75% {
+    top: 100px;
+    opacity: 1;
+  }
+  85% {
+    top: 108px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0.7);
+  }
+  100% {
+    top: 5px;
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-effect {
+  0%, 70% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  85% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .water-drop {
+    right: 8%;
+    top: 72%;
+    transform: scale(0.7);
+  }
+}
+/* КАПЛЯ ИЗ НОМЕРА ТЕЛЕФОНА */
+
+.header-phone {
+  position: relative;
+}
+
+.phone-drop {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 12px;
+  height: 17px;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    145deg,
+    #e5f8ff,
+    #45baff 55%,
+    #087ac0
+  );
+  border-radius: 55% 45% 60% 40% / 65% 65% 35% 35%;
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: 0 0 10px rgba(65, 180, 255, 0.6);
+  animation: phone-drop-fall 3s ease-in-out infinite;
+}
+
+@keyframes phone-drop-fall {
+  0%, 10% {
+    top: 100%;
+    opacity: 0;
+    transform: translateX(-50%) rotate(45deg) scale(0.6);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  85% {
+    top: 85px;
+    opacity: 1;
+    transform: translateX(-50%) rotate(45deg) scale(1);
+  }
+
+  100% {
+    top: 100px;
+    opacity: 0;
+    transform: translateX(-50%) rotate(45deg) scale(0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* КАПЛЯ КАК ЭМОДЗИ 💧 */
+
+.phone-drop {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 17px;
+  height: 23px;
+  opacity: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    #b9edff 0%,
+    #38baff 35%,
+    #087bd2 75%,
+    #04549c 100%
+  );
+
+  clip-path: polygon(
+    50% 0%,
+    63% 24%,
+    80% 45%,
+    94% 65%,
+    95% 78%,
+    87% 91%,
+    72% 99%,
+    50% 100%,
+    28% 99%,
+    13% 91%,
+    5% 78%,
+    6% 65%,
+    20% 45%,
+    37% 24%
+  );
+
+  filter: drop-shadow(0 0 5px rgba(55, 175, 255, 0.7));
+
+  animation: phone-drop-fall 3s ease-in-out infinite;
+}
+
+.phone-drop::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 4px;
+  width: 4px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  transform: rotate(25deg);
+}
+
+@keyframes phone-drop-fall {
+  0%, 10% {
+    top: 100%;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.6);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  85% {
+    top: 85px;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+
+  100% {
+    top: 100px;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+}

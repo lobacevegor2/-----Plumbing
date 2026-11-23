@@ -58,3 +58,30 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
     next.addEventListener("click", () => showImage(current + 1));
   }
 });
+// АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ ПРОКРУТКЕ
+
+const revealElements = document.querySelectorAll(
+  "section, .service-card, .advantage-card, .review-card"
+);
+
+revealElements.forEach((element) => {
+  element.classList.add("reveal");
+});
+
+const revealObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.12
+  }
+);
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
