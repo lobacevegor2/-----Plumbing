@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lobacevegor2.github.io/-----Plumbing/site-map.xml
